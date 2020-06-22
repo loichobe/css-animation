@@ -1,0 +1,153 @@
+/* Variable */
+
+$frame: 0.3s;
+$pink: #F8CAE2;
+$red: #91222C;
+$sred: #E16D73;
+$purple: #7D4983;
+$gray: #808080;
+$white: #FFFFFF;
+$black: #000000;
+$brown: #745D5B;
+$font: 'Sriracha', cursive;
+
+
+/* Body */ 
+body {
+    font-family: $font;
+    font-size: 15px;
+    background-color: $white;
+    line-height: 1.4;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: $pink;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    transition: box-shadow $frame;
+    width: 370px;
+    overflow: hidden;
+}
+
+/* Image */ 
+
+.card--img {
+    height: 235px;
+    width: 370px;
+    background-color: $black;
+    overflow: hidden;
+    transition: height $frame;
+
+    img{
+        width: 100%;
+        opacity: 1;
+        display: block;
+        transition: opacity $frame, transform $frame  ;
+    }
+}
+
+/* Hover */ 
+
+.card:hover{
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+    
+        .card__img{
+            height: 100px;
+        }
+
+        img{
+            opacity: 0.7;
+            transform: scale(1.3);            
+        }
+}
+
+/* Date */
+
+.card--date {
+    position: absolute;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 19px ;
+    font-weight: normal;
+    padding: 4px;
+
+        .card--day {
+            font-size: 12px;
+        }
+}
+
+/* Contenu */ 
+
+.card--content{
+    position: relative;
+    padding: 20px;
+    height: 115px;
+    transition: height $frame;
+
+    .card--tab {
+        position: absolute;
+        background-color: $purple;
+        color: $white;
+        top: -27px;
+        left: 0px;
+        padding: 5px 10px;
+        font-weight: bold;
+        }
+
+    .card--title {
+        font-size: 1.3em;
+        color: $red;
+        font-weight: bold;
+    }
+
+    .card--subtitle {
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        color: $sred;
+        font-weight: normal;
+    }
+
+    .card--text{
+        margin-top: -10px;
+        line-height: 25px;
+        font-size: 16px;
+        color: $brown;
+        opacity: 0;
+        transition: opacity $frame;
+        .card:hover &{
+            opacity: 1;
+        }
+    }
+
+    .card:hover &{
+        height: 330px;   
+    }
+}
+
+/* Détails */ 
+
+.card--details{
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 3px;
+    font-size: 15px;
+    color: $gray;
+    left: 30px;
+
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 5px;
+            ;   
+        }
+}
